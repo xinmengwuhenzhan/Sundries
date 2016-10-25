@@ -7,12 +7,15 @@
   <artifactId>sundries</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>sundries-core</module>
-    <module>sundries-rs</module>
-  </modules>
   <name>sundries</name>
   <description>sundries父工程</description>
+
+  <modules>
+    <module>sundries-api</module>
+    <module>sundries-core</module>
+    <module>sundries-rs</module>
+    <module>sundries-server</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

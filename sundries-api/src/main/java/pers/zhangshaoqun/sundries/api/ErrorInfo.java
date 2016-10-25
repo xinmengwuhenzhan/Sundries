@@ -1,7 +1,7 @@
 package pers.zhangshaoqun.sundries.api;
 
 /**
- * Created by admin on 2016-10-24.
+ * 错误信息类
  */
 public class ErrorInfo {
   //错误代码

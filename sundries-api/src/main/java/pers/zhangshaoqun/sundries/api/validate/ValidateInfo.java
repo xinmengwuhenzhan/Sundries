@@ -3,7 +3,7 @@ package pers.zhangshaoqun.sundries.api.validate;
 import pers.zhangshaoqun.sundries.api.ErrorInfo;
 
 /**
- * Created by admin on 2016-10-24.
+ * 验证信息类
  */
 public class ValidateInfo extends ErrorInfo {
 
@@ -12,6 +12,7 @@ public class ValidateInfo extends ErrorInfo {
   private Long nonce;
   private String echostr;
 
+  /** 微信加密签名 */
   public String getSignature() {
     return signature;
   }
@@ -20,6 +21,7 @@ public class ValidateInfo extends ErrorInfo {
     this.signature = signature;
   }
 
+  /** 时间戳 */
   public Long getTimestamp() {
     return timestamp;
   }
@@ -28,6 +30,7 @@ public class ValidateInfo extends ErrorInfo {
     this.timestamp = timestamp;
   }
 
+  /** 随机数 */
   public Long getNonce() {
     return nonce;
   }
@@ -36,6 +39,7 @@ public class ValidateInfo extends ErrorInfo {
     this.nonce = nonce;
   }
 
+  /** 随机字符串 */
   public String getEchostr() {
     return echostr;
   }

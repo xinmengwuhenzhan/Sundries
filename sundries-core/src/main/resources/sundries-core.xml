@@ -8,5 +8,9 @@
        http://www.springframework.org/schema/context/spring-context.xsd
        ">
 
-      <context:component-scan base-package="pers.zhangshaoqun.sundries.core.impl.*" />
+  <context:component-scan base-package="pers.zhangshaoqun.sundries.service.impl.*"/>
+  <bean id="sundries-api.validateService"
+        class="pers.zhangshaoqun.sundries.service.impl.validate.ValidateServiceImpl">
+    <property name="token" value= "${weChat.token:sundries}" />
+  </bean>
 </beans>

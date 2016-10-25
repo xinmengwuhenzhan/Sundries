@@ -1,4 +1,4 @@
-package pers.zhangshaoqun.sundries.core.util;
+package pers.zhangshaoqun.sundries.service.util;
 
 import java.security.MessageDigest;
 

@@ -8,8 +8,8 @@ import pers.zhangshaoqun.sundries.api.ErrorInfo;
 public class ValidateInfo extends ErrorInfo {
 
   private String signature;
-  private Long timestamp;
-  private Long nonce;
+  private String timestamp;
+  private String nonce;
   private String echostr;
 
   /** 微信加密签名 */
@@ -22,20 +22,20 @@ public class ValidateInfo extends ErrorInfo {
   }
 
   /** 时间戳 */
-  public Long getTimestamp() {
+  public String getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(Long timestamp) {
+  public void setTimestamp(String timestamp) {
     this.timestamp = timestamp;
   }
 
   /** 随机数 */
-  public Long getNonce() {
+  public String getNonce() {
     return nonce;
   }
 
-  public void setNonce(Long nonce) {
+  public void setNonce(String nonce) {
     this.nonce = nonce;
   }
 

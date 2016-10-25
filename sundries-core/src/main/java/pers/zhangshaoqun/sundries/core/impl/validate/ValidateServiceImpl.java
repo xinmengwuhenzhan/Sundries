@@ -1,4 +1,4 @@
-package pers.zhangshaoqun.sundries.core.impl;
+package pers.zhangshaoqun.sundries.core.impl.validate;
 
 import org.springframework.stereotype.Service;
 import pers.zhangshaoqun.sundries.api.SundriesServiceException;

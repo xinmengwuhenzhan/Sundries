@@ -1,12 +1,13 @@
 package pers.zhangshaoqun.sundries.controller.wechat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pers.zhangshaoqun.sundries.api.SundriesServiceException;
 import pers.zhangshaoqun.sundries.api.validate.ValidateInfo;
 import pers.zhangshaoqun.sundries.api.validate.ValidateService;
@@ -15,7 +16,7 @@ import pers.zhangshaoqun.sundries.api.validate.ValidateService;
  * @Author zhangshaoqun
  */
 @Controller
-@RequestMapping("wechat")
+@RequestMapping("/wechat")
 public class WeChatController {
 
   private static final Logger logger = LoggerFactory.getLogger(WeChatController.class);
@@ -24,7 +25,7 @@ public class WeChatController {
   private ValidateService validateService;
 
   @RequestMapping(value = "/valid", method = RequestMethod.GET)
-  public @ResponseBody String validate(ValidateInfo validateInfo) {
+  public @ResponseBody String validate(@RequestBody ValidateInfo validateInfo) {
     logger.info("开始进行微信验证");
     String result = "";
     try {

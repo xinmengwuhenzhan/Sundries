@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+  <context:annotation-config/>
+  <context:component-scan base-package="pers.zhangshaoqun.sundries.controller.*"/>
+
+  <bean id="sundries-rs.jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+    <property name="serializationInclusion">
+      <value type="com.fasterxml.jackson.annotation.JsonInclude$Include">NON_NULL</value>
+    </property>
+    <property name="dateFormat">
+      <bean class="java.text.SimpleDateFormat">
+        <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"></constructor-arg>
+      </bean>
+    </property>
+  </bean>
+
+  <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <property name="targetObject" ref="sundries-rs.jacksonObjectMapper"/>
+    <property name="targetMethod" value="configure"/>
+    <property name="arguments">
+      <list>
+        <value type="com.fasterxml.jackson.databind.DeserializationFeature">FAIL_ON_UNKNOWN_PROPERTIES</value>
+        <value>false</value>
+      </list>
+    </property>
+  </bean>
+
+  <mvc:annotation-driven>
+    <mvc:message-converters register-defaults="true">
+      <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+        <property name="supportedMediaTypes">
+          <list>
+            <!-- 这里顺序不能反，一定先写text/html,不然ie下出现下载提示 -->
+            <value>text/html;charset=UTF-8</value>
+            <value>application/json;charset=UTF-8</value>
+          </list>
+        </property>
+      </bean>
+      <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="objectMapper">
+          <ref bean="sundries-rs.jacksonObjectMapper"/>
+        </property>
+        <property name="prettyPrint" value="true"/>
+      </bean>
+    </mvc:message-converters>
+  </mvc:annotation-driven>
+
+</beans>

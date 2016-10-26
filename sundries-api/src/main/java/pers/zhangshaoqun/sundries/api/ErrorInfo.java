@@ -1,9 +1,13 @@
 package pers.zhangshaoqun.sundries.api;
 
+import java.io.Serializable;
+
 /**
  * 错误信息类
  */
-public class ErrorInfo {
+public class ErrorInfo implements Serializable {
+
+  private static final long serialVersionUID = -6551631853741127977L;
   //错误代码
   private String errorCode;
   //错误信息

@@ -51,6 +51,7 @@ public class ValidateServiceImpl implements ValidateService {
         return echostr;
       }
     }
+    logger.info("请求来源不是微信");
     return "error";
   }
 }

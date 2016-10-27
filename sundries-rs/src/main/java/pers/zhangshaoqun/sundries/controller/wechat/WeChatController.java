@@ -4,10 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.zhangshaoqun.sundries.api.SundriesServiceException;
+import pers.zhangshaoqun.sundries.api.message.response.BaseMessage;
 import pers.zhangshaoqun.sundries.api.validate.ValidateInfo;
 import pers.zhangshaoqun.sundries.api.validate.ValidateService;
 
@@ -34,5 +36,13 @@ public class WeChatController {
       logger.error("微信验证失败" + e.getMessage());
     }
     return result;
+  }
+
+  @RequestMapping(method = RequestMethod.POST)
+  public @ResponseBody
+  BaseMessage process(@RequestBody pers.zhangshaoqun.sundries.api.message.request.BaseMessage message){
+    logger.info("开始处理微信信息请求");
+    System.out.println(message.getMsgType());
+    return null;
   }
 }

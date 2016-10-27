@@ -1,10 +1,12 @@
 package pers.zhangshaoqun.sundries.api.message.response;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 /**
  * 回复消息的基类
  */
+@XmlRootElement
 public class BaseMessage implements Serializable{
   private static final long serialVersionUID = 5201691518415383193L;
 

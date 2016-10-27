@@ -2,9 +2,12 @@ package pers.zhangshaoqun.sundries.api.message.request.text;
 
 import pers.zhangshaoqun.sundries.api.message.request.BaseMessage;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * 文本消息
  */
+@XmlRootElement
 public class TextMessage extends BaseMessage {
   private String Content;
 

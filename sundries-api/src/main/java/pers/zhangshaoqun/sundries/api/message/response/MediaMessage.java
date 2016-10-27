@@ -1,8 +1,11 @@
 package pers.zhangshaoqun.sundries.api.message.response;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * 媒体文件信息
  */
+@XmlRootElement
 public class MediaMessage {
   private String MediaId;
 

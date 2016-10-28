@@ -1,5 +1,6 @@
 package pers.zhangshaoqun.sundries.api.message.request;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -18,6 +19,7 @@ public class BaseMessage implements Serializable{
   private long MsgId;
 
   /** 开发者微信号 */
+  @XmlElement(name = "ToUserName")
   public String getToUserName() {
     return ToUserName;
   }

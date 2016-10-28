@@ -13,6 +13,10 @@ import pers.zhangshaoqun.sundries.api.message.response.BaseMessage;
 import pers.zhangshaoqun.sundries.api.validate.ValidateInfo;
 import pers.zhangshaoqun.sundries.api.validate.ValidateService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 /**
  * @Author zhangshaoqun
  */
@@ -40,9 +44,11 @@ public class WeChatController {
 
   @RequestMapping(method = RequestMethod.POST)
   public @ResponseBody
-  BaseMessage process(@RequestBody pers.zhangshaoqun.sundries.api.message.request.BaseMessage message){
+  BaseMessage process(HttpServletRequest request, HttpServletResponse response, @RequestBody String s) throws IOException {
     logger.info("开始处理微信信息请求");
-    System.out.println(message.getMsgType());
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    System.out.println(s);
     return null;
   }
 }

@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,11 +43,10 @@ public class WeChatController {
 
   @RequestMapping(method = RequestMethod.POST)
   public @ResponseBody
-  BaseMessage process(HttpServletRequest request, HttpServletResponse response, @RequestBody String s) throws IOException {
+  BaseMessage process(HttpServletRequest request, HttpServletResponse response) throws IOException {
     logger.info("开始处理微信信息请求");
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
-    System.out.println(s);
     return null;
   }
 }

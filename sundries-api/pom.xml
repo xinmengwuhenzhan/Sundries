@@ -12,5 +12,16 @@
   <artifactId>sundries-api</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+    </dependency>
+  </dependencies>
 
 </project>

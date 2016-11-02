@@ -28,6 +28,14 @@ public class MessageUtil {
   public static final String REQUEST_MESSAGE_TYPE_EVENT = "event";
 
 
+  /** 返回消息--文本 */
+  public static final String RESPONSE_MESSAGE_TYPE_TEXT = "text";
+  /** 返回消息--音乐 */
+  public static final String RESPONSE_MESSAGE_TYPE_MUSIC = "music";
+  /** 返回消息--图文 */
+  public static final String RESPONSE_MESSAGE_TYPE_NEWS = "news";
+
+
   private static XStream xstream = new XStream(new XppDriver() {
     public HierarchicalStreamWriter createWriter(Writer out) {
       return new PrettyPrintWriter(out) {

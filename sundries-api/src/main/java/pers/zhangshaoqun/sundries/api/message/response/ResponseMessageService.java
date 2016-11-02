@@ -16,5 +16,5 @@ import pers.zhangshaoqun.sundries.api.SundriesServiceException;
  */
 public interface ResponseMessageService {
 
-  BaseMessage processMessage(String type) throws SundriesServiceException;
+  BaseMessage processMessage(pers.zhangshaoqun.sundries.api.message.request.BaseMessage requestMessage) throws SundriesServiceException;
 }

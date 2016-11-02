@@ -9,17 +9,27 @@
 
 package pers.zhangshaoqun.sundries.service.impl.message;
 
-import pers.zhangshaoqun.sundries.api.message.response.BaseMessage;
 import pers.zhangshaoqun.sundries.api.message.response.ResponseMessageService;
+
+import java.io.Serializable;
 
 /**
  * @Author zhangshaoqun
  */
-public class ResponseMessage extends BaseMessage {
+public class RequestMessage implements Serializable {
 
   private static final long serialVersionUID = 7520927505114898050L;
 
+  private String MsgType;
   private ResponseMessageService responseMessageService;
+
+  public String getMsgType() {
+    return MsgType;
+  }
+
+  public void setMsgType(String msgType) {
+    MsgType = msgType;
+  }
 
   public ResponseMessageService getResponseMessageService() {
     return responseMessageService;

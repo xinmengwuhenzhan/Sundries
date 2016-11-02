@@ -20,8 +20,8 @@ import java.util.Map;
 public class MessageConfig {
   public static final MessageConfig instance = new MessageConfig();
 
-  private Map<String, ResponseMessage> map = new HashMap<String, ResponseMessage>();
-  private List<ResponseMessage> messages = new ArrayList<ResponseMessage>();
+  private Map<String, RequestMessage> map = new HashMap<String, RequestMessage>();
+  private List<RequestMessage> messages = new ArrayList<RequestMessage>();
 
   private MessageConfig(){
 
@@ -32,21 +32,22 @@ public class MessageConfig {
     return instance;
   }
 
-  public List<ResponseMessage> getMessages() {
+
+  public List<RequestMessage> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<ResponseMessage> messages) {
+  public void setMessages(List<RequestMessage> messages) {
     map.clear();
     this.messages = messages;
     if (messages != null){
-      for (ResponseMessage responseMessage: messages){
-        map.put(responseMessage.getMsgType(), responseMessage);
+      for (RequestMessage requestMessage: messages){
+        map.put(requestMessage.getMsgType(), requestMessage);
       }
     }
   }
 
-  public ResponseMessage getMessage(String msgType){
+  public RequestMessage getMessage(String msgType){
     return map.get(msgType);
   }
 }

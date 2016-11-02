@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.zhangshaoqun.sundries.api.SundriesServiceException;
-import pers.zhangshaoqun.sundries.api.message.response.BaseMessage;
+import pers.zhangshaoqun.sundries.api.message.MessageService;
 import pers.zhangshaoqun.sundries.api.validate.ValidateInfo;
 import pers.zhangshaoqun.sundries.api.validate.ValidateService;
 
@@ -27,8 +27,10 @@ public class WeChatController {
 
   @Autowired
   private ValidateService validateService;
+  @Autowired
+  private MessageService messageService;
 
-  @RequestMapping(value = "/valid", method = RequestMethod.GET)
+  @RequestMapping(method = RequestMethod.GET)
   public @ResponseBody String validate(ValidateInfo validateInfo) {
     logger.info("开始进行微信验证");
     String result = "";
@@ -43,10 +45,10 @@ public class WeChatController {
 
   @RequestMapping(method = RequestMethod.POST)
   public @ResponseBody
-  BaseMessage process(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  String process(HttpServletRequest request, HttpServletResponse response) throws IOException, SundriesServiceException {
     logger.info("开始处理微信信息请求");
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
-    return null;
+    return messageService.processRequest(request);
   }
 }

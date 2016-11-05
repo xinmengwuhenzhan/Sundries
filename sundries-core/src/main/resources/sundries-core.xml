@@ -8,7 +8,6 @@
        http://www.springframework.org/schema/context/spring-context.xsd
        ">
 
-  <import resource="classpath:META-INF/sundries-core-message.xml" />
   <context:component-scan base-package="pers.zhangshaoqun.sundries.service.impl.*"/>
   <bean id="sundries-api.validateService"
         class="pers.zhangshaoqun.sundries.service.impl.validate.ValidateServiceImpl">

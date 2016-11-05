@@ -24,6 +24,10 @@ public class MessageUtil {
   public static final String REQUEST_MESSAGE_TYPE_LOCATION = "location";
   /** 请求消息--音频 */
   public static final String REQUEST_MESSAGE_TYPE_VOICE = "voice";
+  /** 请求消息--视频 */
+  public static final String REQUEST_MESSAGE_TYPE_VIDEO = "video";
+  /** 请求消息--小视频 */
+  public static final String REQUEST_MESSAGE_TYPE_SHORTVIDEO = "shortvideo";
   /** 请求消息--推送 */
   public static final String REQUEST_MESSAGE_TYPE_EVENT = "event";
 
@@ -69,6 +73,12 @@ public class MessageUtil {
    */
   public static String objToXml(Object object){
     xstream.alias("xml", object.getClass());
+    return xstream.toXML(object);
+  }
+
+  public static String objToXml(Object object, Object list){
+    xstream.alias("xml", object.getClass());
+    xstream.alias("item", list.getClass());
     return xstream.toXML(object);
   }
 

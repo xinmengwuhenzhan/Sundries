@@ -16,6 +16,7 @@
     <module>sundries-rs</module>
     <module>sundries-server</module>
     <module>sundries-web</module>
+    <module>sundries-ui</module>
   </modules>
 
   <properties>

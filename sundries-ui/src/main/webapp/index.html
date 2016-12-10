@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>sundries-ui</title>
+  <script src="dist/components/group/index.js"></script>
+  <script src="dist/components/cell/index.js"></script>
+
+  <script>
+    // register components
+    Vue.component('group', vuxGroup)
+    Vue.component('cell', vuxCell)
+
+    new Vue({
+      el: '#demo'
+    })
+  </script>
+</head>
+<body>
+  <link rel="stylesheet" href="dist/vux.css">
+  <!--include Vue yourself-->
+  <script src="dist/vue.js"></script>
+
+  <div id="demo">
+    <group>
+      <cell title="vue" value="cool"></cell>
+    </group>
+  </div>
+</body>
+</html>

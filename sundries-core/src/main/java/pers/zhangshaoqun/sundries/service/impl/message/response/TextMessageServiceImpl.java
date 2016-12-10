@@ -31,8 +31,8 @@ public class TextMessageServiceImpl implements TextMessageService {
       newsMessage.setArticleCount(1);
       ArticlesInfo articlesInfo = new ArticlesInfo();
       articlesInfo.setTitle("测试");
-      articlesInfo.setDescription("这是一个百度链接");
-      articlesInfo.setUrl("http://www.baidu.com");
+      articlesInfo.setDescription("这是一个测试链接");
+      articlesInfo.setUrl("http://vux.li");
       List<ArticlesInfo> list = new ArrayList<ArticlesInfo>();
       list.add(articlesInfo);
       newsMessage.setArticles(list);
